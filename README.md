@@ -1,69 +1,78 @@
-🛡️ QuestLog AI - Gamified Productivity
-Live Demo: Click Here to View App (https://questlog-ai.vercel.app/)
+# 🛡️ QuestLog AI
 
-QuestLog AI is a productivity application that leverages Generative AI (Llama 3 via Groq) to combat procrastination. It transforms vague goals (e.g., "Learn Python") into actionable, gamified tasks with XP rewards, turning self-improvement into an RPG.
+> **Live Demo:** https://questlog-ai.vercel.app/
 
-🚀 Key Features
-AI-Powered Breakdown: Uses Large Language Models (LLMs) to intelligently decompose complex goals into 3-5 sub-tasks.
+**QuestLog AI** is a gamified productivity application that transforms the daunting process of goal setting into an engaging Role-Playing Game (RPG). By leveraging **Generative AI (Llama 3 via Groq)**, it intelligently breaks down high-level user goals into actionable, bite-sized "quests" with XP rewards.
 
-Gamification Engine: Custom logic calculates XP rewards based on task difficulty.
+![Project Screenshot](https://via.placeholder.com/800x450?text=Upload+Your+Screenshot+Here)
 
-Real-time State Management: React hooks manage live updates for XP bars and quest completion status.
+## 🚀 Key Features
 
-Production Architecture: Decoupled Frontend/Backend deployed on Vercel and Render.
+* **🤖 AI-Powered Task Decomposition:** Integrates the Groq API (Llama 3.3) to analyze user intent and generate structured, context-aware sub-tasks in milliseconds.
+* **🎮 Gamification Engine:** Custom backend logic calculates Experience Points (XP) based on task complexity, providing immediate dopamine feedback for productivity.
+* **⚡ High-Performance Architecture:** Built with Vite (React) for a sub-second load time and Flask for a lightweight, scalable REST API.
+* **🌍 Production Deployed:** Fully hosted with a decoupled architecture—Frontend on **Vercel** and Backend on **Render**.
 
-🛠️ Tech Stack
-Frontend: React.js, Vite, Axios, CSS3
+## 🛠️ Tech Stack
 
-Backend: Python, Flask, Groq SDK
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | React.js + Vite | UI/UX, State Management, Axios |
+| **Backend** | Python (Flask) | REST API, AI Logic, CORS Management |
+| **AI Model** | Llama 3.3 (70B) | Powered by Groq Cloud for ultra-fast inference |
+| **Deployment** | Vercel & Render | CI/CD Pipeline for live hosting |
 
-AI Model: Llama 3.3 70B (via Groq Cloud)
+## ⚙️ How It Works (Architecture)
 
-Deployment: Vercel (Client), Render (Server)
+1.  **User Input:** The user enters a goal (e.g., "Learn Docker").
+2.  **Prompt Engineering:** The backend constructs a specialized system prompt to force the AI into a "Game Master" persona.
+3.  **Inference:** The Groq API processes the request and returns a strict JSON array of tasks.
+4.  **State Update:** The frontend receives the JSON, renders the quest cards, and tracks the user's local XP state.
 
-⚙️ Architecture
-The application follows a standard Client-Server architecture:
+## 📦 Installation & Local Setup
 
-User Input: User submits a goal via the React UI.
+Follow these steps to run the project locally.
 
-API Request: Frontend sends a POST request to the Flask Backend.
-
-Prompt Engineering: Backend constructs a system prompt optimized for JSON output.
-
-Inference: The Groq API generates the task list in milliseconds.
-
-Response: Backend parses the JSON and serves it to the Client.
-
-📦 Installation & Setup
-1. Clone the repository:
-Bash
-git clone https://github.com/puneeeeth88/questlog-ai.git
+### 1. Clone the Repository
+git clone [https://github.com/puneeeeth88/questlog-ai.git]
 cd questlog-ai
 
 
-2. Backend Setup:
-Bash
+### 2. Backend Setup
 cd server
+# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
-# Create a .env file and add: GROQ_API_KEY=your_key_here
+
+# Configure Environment
+# Create a .env file and add your key:
+# GROQ_API_KEY=your_gsk_key_here
+
+# Run Server
 python main.py
 
 
-3. Frontend Setup:
-Bash
+### 3. Frontend Setup
 cd client
 npm install
+
+# Run Client
 npm run dev
-How to Add This to GitHub
-Create the file README.md in your root folder and paste the text above.
 
-(Optional) Take a screenshot of your app, upload it to the folder, and replace the Insert+Screenshot+Here link with the filename (e.g., screenshot.png).
 
-Run:
+## 🔑 Environment Variables
 
-Bash
-git add .
-git commit -m "Added professional documentation"
-git push
+To run this project, you will need the following environment variables:
+
+**Backend (.env)**
+* `GROQ_API_KEY`: Your API key from [Groq Console](https://console.groq.com)
+
+**Frontend (Vercel)**
+* `VITE_API_URL`: The URL of your deployed backend (e.g., `https://questlog-backend.onrender.com`)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
