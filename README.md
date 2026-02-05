@@ -34,12 +34,14 @@
 Follow these steps to run the project locally.
 
 ### 1. Clone the Repository
-git clone [https://github.com/puneeeeth88/questlog-ai.git]
+```bash
+git clone [https://github.com/yourusername/questlog-ai.git](https://github.com/yourusername/questlog-ai.git)
 cd questlog-ai
 
-
 ### 2. Backend Setup
+```bash
 cd server
+
 # Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
@@ -53,14 +55,6 @@ pip install -r requirements.txt
 
 # Run Server
 python main.py
-
-
-### 3. Frontend Setup
-cd client
-npm install
-
-# Run Client
-npm run dev
 
 
 ## 🔑 Environment Variables
