@@ -36,9 +36,10 @@ Follow these steps to run the project locally.
 ```bash
 git clone [https://github.com/yourusername/questlog-ai.git](https://github.com/yourusername/questlog-ai.git)
 cd questlog-ai
+```
 
 ### 2. Backend Setup
-bash
+```bash
 cd server
 
 # Create virtual environment
@@ -54,7 +55,7 @@ pip install -r requirements.txt
 
 # Run Server
 python main.py
-
+```
 
 ## 🔑 Environment Variables
 
