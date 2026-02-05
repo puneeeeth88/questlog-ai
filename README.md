@@ -4,7 +4,6 @@
 
 **QuestLog AI** is a gamified productivity application that transforms the daunting process of goal setting into an engaging Role-Playing Game (RPG). By leveraging **Generative AI (Llama 3 via Groq)**, it intelligently breaks down high-level user goals into actionable, bite-sized "quests" with XP rewards.
 
-![Project Screenshot](https://via.placeholder.com/800x450?text=Upload+Your+Screenshot+Here)
 
 ## 🚀 Key Features
 
@@ -34,12 +33,12 @@
 Follow these steps to run the project locally.
 
 ### 1. Clone the Repository
-```bash
+bash
 git clone [https://github.com/yourusername/questlog-ai.git](https://github.com/yourusername/questlog-ai.git)
 cd questlog-ai
 
 ### 2. Backend Setup
-```bash
+bash
 cd server
 
 # Create virtual environment
