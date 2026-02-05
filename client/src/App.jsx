@@ -2,26 +2,35 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 
+// ------------------------------------------------------------------
+// 1. DEFINE THE API URL
+// If Vercel provides a URL, use it. Otherwise, use your Render URL directly.
+// (Or fallback to localhost for testing on your machine)
+// ------------------------------------------------------------------
+const API_URL = import.meta.env.VITE_API_URL || 'https://questlog-backend-30u8.onrender.com'; 
+
 function App() {
   const [goal, setGoal] = useState("")
   const [quests, setQuests] = useState([])
   const [loading, setLoading] = useState(false)
   const [xp, setXp] = useState(0)
 
-  // Load quests on startup
   useEffect(() => {
     fetchQuests()
   }, [])
 
   const fetchQuests = () => {
-    axios.get('http://localhost:8080/api/quests')
+    // 2. USE THE API_URL VARIABLE HERE
+    axios.get(`${API_URL}/api/quests`)
       .then(res => setQuests(res.data))
+      .catch(err => console.error("Backend Error:", err))
   }
 
   const handleGenerate = () => {
     if (!goal) return
     setLoading(true)
-    axios.post('http://localhost:8080/api/generate-quest', { goal })
+    // 2. USE THE API_URL VARIABLE HERE
+    axios.post(`${API_URL}/api/generate-quest`, { goal })
       .then(res => {
         setQuests(res.data)
         setLoading(false)
@@ -34,10 +43,10 @@ function App() {
   }
 
   const toggleQuest = (id, currentStatus, rewardXp) => {
-    axios.post(`http://localhost:8080/api/quests/${id}/complete`)
+    // 2. USE THE API_URL VARIABLE HERE
+    axios.post(`${API_URL}/api/quests/${id}/complete`)
       .then(res => {
-        fetchQuests() // Refresh list
-        // Simple XP logic for demo
+        fetchQuests() 
         if (!currentStatus) setXp(xp + rewardXp)
         else setXp(xp - rewardXp)
       })
