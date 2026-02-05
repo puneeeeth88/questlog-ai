@@ -7,7 +7,7 @@ import './App.css'
 // If Vercel provides a URL, use it. Otherwise, use your Render URL directly.
 // (Or fallback to localhost for testing on your machine)
 // ------------------------------------------------------------------
-const API_URL = import.meta.env.VITE_API_URL || 'https://questlog-backend-30u8.onrender.com'; 
+const API_URL = import.meta.env.VITE_API_URL || 'https://questlog-backend-30u8.onrender.com';
 
 function App() {
   const [goal, setGoal] = useState("")
