@@ -33,7 +33,7 @@
 Follow these steps to run the project locally.
 
 ### 1. Clone the Repository
-bash
+```bash
 git clone [https://github.com/yourusername/questlog-ai.git](https://github.com/yourusername/questlog-ai.git)
 cd questlog-ai
 
