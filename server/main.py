@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # 2. Setup Groq Client
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
